@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>SVG/chevron_up_light</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Navigation" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="chevron_up_light_normal" fill="#000000" fill-rule="nonzero">
+            <path d="M2,10.642878 C2,10.550764 2.0371793,10.459364 2.11153789,10.3900999 L7.76734341,5.10389608 C7.91530183,4.96536797 8.15355283,4.96536797 8.30227001,5.10389608 L13.8882695,10.3251202 C14.0362279,10.4629343 14.0377454,10.688578 13.889787,10.8299624 C13.7425874,10.9692045 13.5020601,10.9706326 13.3533429,10.8313905 L8.03442733,5.86080221 L2.64722325,10.8956561 C2.49774731,11.0356123 2.25797879,11.0341842 2.11077913,10.894942 C2.0371793,10.8249639 2,10.7335639 2,10.642878 Z"></path>
+        </g>
+    </g>
+</svg>

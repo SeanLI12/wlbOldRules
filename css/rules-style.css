@@ -1,0 +1,281 @@
+@font-face {
+  font-family: "Helvetica Condensed Bold";
+  src: url("../fonts/Helvetica-Condensed-Bold.eot");
+  src: url("../fonts/Helvetica-Condensed-Bold.eot?#iefix")
+      format("embedded-opentype"),
+    url("../fonts/Helvetica-Condensed-Bold.woff2") format("woff2"),
+    url("../fonts/Helvetica-Condensed-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+body{
+  background:white;
+}
+.overall-container {
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+}
+
+.iframe-container {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.sports-viewer {
+  overflow: hidden;
+  height: calc(100% - 42px - 32px);
+  width: 100%;
+}
+
+.sports-viewer body {
+  margin: 0;
+}
+
+#pagetop {
+  color: #000;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 20px !important;
+  font-weight: 700;
+  line-height: 1.2em;
+  margin-top: 0px;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+.rule-h2 {
+  color: #000;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 20px !important;
+  font-weight: 700;
+  line-height: 16px;
+  margin-top: 0px;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+p.org {
+  background: none;
+  border: none;
+  color: #000;
+  font-family: Helvetica, Arial, sans-serif !important;
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  line-height: 22px !important;
+  margin: 24px 0 16px;
+  padding: 0px;
+  text-transform: uppercase;
+}
+
+.sbk-rules-title {
+  background: none;
+  border: none;
+  color: #000;
+  font-family: Helvetica, Arial, sans-serif !important;
+  /* font-family: "Helvetica Condensed Bold"; */
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  line-height: 22px !important;
+  margin: 24px 0 16px;
+  padding: 0px;
+  text-transform: uppercase;
+}
+
+ul,
+ol {
+  counter-reset: item;
+  list-style: decimal outside !important;
+  margin-top: 0 !important;
+  margin-left: 0 !important;
+  margin-bottom: 16px !important;
+  padding-inline-start: 24px;
+}
+
+ul > li,
+ol > li {
+  color: rgba(0, 0, 0, 0.72);
+  font-size: 14px;
+  font-family: Helvetica, Arial, sans-serif;
+  line-height: 17px;
+  margin: 16px 0;
+  position: relative;
+  width: 100%;
+}
+
+ul li::marker,
+ol li::marker {
+  width: 100px !important;
+}
+
+p {
+  color: rgba(0, 0, 0, 0.72);
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 14px !important;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  margin-left: 0 !important;
+}
+
+p em {
+  color: rgba(0, 0, 0, 0.56);
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  line-height: 16px;
+  text-transform: uppercase;
+}
+
+table {
+  width: 100%;
+}
+
+tr {
+  background: none;
+  /* background-color: #525252 !important; */
+}
+
+td {
+  /* background-color: #525252; */
+  background-color: #525252;
+  border-radius: 4px;
+  color: white;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 32px;
+  padding: 7px 8px 9px;
+}
+
+td a {
+  color: #fff !important;
+  text-decoration: none !important;
+}
+
+td p {
+  margin: 0 !important;
+}
+
+#linktable td {
+  background-color: #525252;
+}
+
+br {
+  display: none;
+}
+
+.tblrules {
+  margin-top: 16px;
+}
+.tblrules p{
+  color:white!important;
+}
+/* Dropdown */
+
+.rules-dropdown {
+  display: block;
+  margin-bottom: 32px;
+  position: relative;
+  width: 100%;
+}
+
+.rules-dropdown .dropbtn {
+  background: #fff url(../img/chevron_down.svg) no-repeat right;
+  background-position-x: calc(100% - 16px);
+  border: 1px solid rgba(0, 0, 0, 0.32);
+  border-radius: 3px;
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.64);
+  font-family: Helvetica;
+  font-size: 12px;
+  line-height: 16px;
+  padding: 12px 16px;
+  text-align: left;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.rules-dropdown .dropbtn:focus {
+  outline: none;
+}
+.tablecontainer{
+  overflow-x: auto;
+}
+.rules-dropdown .dropdown-content {
+  background-color: #fff;
+  border-radius: 4px;
+  /* box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  max-height: 250px;
+  min-width: 160px;
+  opacity: 0;
+  overflow: auto;
+  padding: 4px 16px;
+  position: absolute;
+  top: 0;
+  transform: scale(0.35, 0.35);
+  transform-origin: 10% 10%;
+  transition: visibility 0s linear 0.5s,
+    opacity 187ms cubic-bezier(0.4, 0, 0.2, 1) 0s,
+    transform 187ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
+  visibility: hidden;
+  width: 100%;
+  z-index: 1;
+}
+
+.rules-dropdown .dropdown-content.show {
+  opacity: 1;
+  transform: scale(1, 1);
+  transition-delay: 0s;
+  visibility: visible;
+}
+
+.rules-dropdown .dropdown-content button {
+  background-color: #fff;
+  border: none;
+  color: rgba(0, 0, 0, 0.64);
+  cursor: pointer;
+  display: block;
+  font-family: Helvetica;
+  font-size: 14px;
+  height: 32px;
+  margin: 8px 0;
+  outline: none;
+  padding: 0;
+  text-align: left;
+  text-decoration: none;
+  width: 100%;
+}
+
+.rules-dropdown .dropdown button:hover {
+  background-color: #ddd;
+}
+
+@media (max-width: 640px) {
+  /* td {
+    font-size: 12px !important;
+  } */
+  td {
+    line-height: normal;
+  }
+
+  td a {
+    text-decoration: none !important;
+  }
+
+  /* TR and TD styles are for 2-column styles */
+  /* tr {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-gap: 4px;
+    margin-bottom: 4px;
+  } */
+  /* td {
+    float: left;
+    position: relative;
+    width: 45%;
+    margin-right: 4px;
+    margin-bottom: 4px;
+  } */
+}
