@@ -8,7 +8,7 @@ import phantom from 'phantom';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const app = express();
-const PORT = 3003;
+const PORT = process.env.PORT || 3003;
 const country="zh";
 
 let pageNamelistURL=[
