@@ -1,13 +1,15 @@
 {
   "name": "sportsoldrule",
-  "version": "1",
+  "version": "1.0.0",
   "main": "index.js",
+  "repository": "https://github.com/SeanLI12/wlbOldRules.git",
+  "author": "Sean <larcenciel12@gmail.com>",
   "license": "MIT",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js"
   },
-  "type": "module",
+  
   "dependencies": {
     "cheerio": "^1.0.0-rc.6",
     "express": "^4.17.1",
