@@ -18,7 +18,17 @@
     }else{
       document.getElementById("ifr").src="./"+locale+"/rules.html";
     }
-    
+   
+    window.onmessage = function(event) {
+      console.log(event.data);
+      if(typeof event.data.data == "string"){
+        document.querySelector("#ifr").setAttribute("height",event.data.data);
+      }
+      if(event.data.topic == "setScrollValue"){
+       
+        window.scrollTo(0, event.data.data);
+      }
+    };
 
   </script>
 </html>

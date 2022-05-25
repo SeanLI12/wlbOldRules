@@ -34,6 +34,28 @@ let pageNamelistURL=[
   "field-hockey",
   "financial-bets",
   "football",
+  "futsal",
+  "golf",
+  "gymnastics",
+  "handball",
+  "ice-hockey",
+  "judo",
+  "lacrosse",
+  "lottery",
+  "medal-betting",
+  "motor-sports",
+  "olympics",
+  "rowing",
+  "rugby",
+  "snooker",
+  "softball",
+  "table-tennis",
+  "tennis",
+  "triathlon-modern-pentahlon",
+  "volleyball",
+  "water-polo",
+  "weightlifting",
+  "wintersports-winterolympics"
   
 ];
 
@@ -98,40 +120,67 @@ const initServer = async () => {
     
 
     
-    /* 
+    
 
-  for(var c=0;c<countrys.length;c++){
-    for(var i=0;i<pageNamelistURL.length;i++){
+   for(var c=0;c<countrys.length;c++){
+    /* for(var i=0;i<pageNamelistURL.length;i++){
       let rulepath;
       if(pageNamelistURL[i]==""){
          rulepath=__dirname+"/"+countrys[c]+"/sports/general.html"
       }else{
          rulepath=__dirname+"/"+countrys[c]+"/sports/"+pageNamelistURL[i]+".html"
       }
+      let rulepath_new;
+      if(pageNamelistURL[i]==""){
+        rulepath_new=__dirname+"/MB/"+countrys[c]+"/rules/sports.html"
+     }else{
+      rulepath_new=__dirname+"/MB/"+countrys[c]+"/rules/sports/"+pageNamelistURL[i]+".html"
+     }
       let rule=await loadHTML(rulepath);
+      let rule_new=await loadHTML(rulepath_new);
       let $ = cheerio.load(rule);
-        const instance = await phantom.create();
-        const page = await instance.createPage();
-        await page.on('onResourceRequested', function(requestData) {
-          console.info('Requesting', requestData.url);
-        });
-        let requrl='https://www.188bet.blue/'+countrysurl[c]+'/rules/sports/'+pageNamelistURL[i];
+      let $$ = cheerio.load(rule_new);
+
+     //   const instance = await phantom.create();
+    //    const page = await instance.createPage();
+    //    await page.on('onResourceRequested', function(requestData) {
+     //     console.info('Requesting', requestData.url);
+     //   }); 
+       // let requrl='https://www.188bet.blue/'+countrysurl[c]+'/rules/sports/'+pageNamelistURL[i];
         let filename=pageNamelistURL[i];
         if(pageNamelistURL[i]==""){
-          requrl='https://www.188bet.blue/'+countrysurl[c]+'/rules/sports';
+         // requrl='https://www.188bet.blue/'+countrysurl[c]+'/rules/sports';
+          filename="general";
+        } 
+
+
+
+        //const status = await page.open(requrl); 
+        // const hcontent = await page.property('content'); 
+       
+        
+
+
+        
+        if(pageNamelistURL[i]==""){
+          
           filename="general";
         }
-        const status = await page.open(requrl);
-        const hcontent = await page.property('content');
-       
-        let $$ = cheerio.load(hcontent);
-        $(".maindiv").html($$(".maindiv"))
-        await instance.exit();
-        await writeHTML($,"./patched/"+countrys[c]+"/sports/"+filename+".html");
-    }
+
+
+        $(".maindiv").html($$(".maindiv").html())
+        
+        await writeHTML($,"./patched/"+countrys[c]+"/sports/"+filename+".html"); 
+    } 
 
     
-  } */
+    let rulepath_new=__dirname+"/"+countrys[c]+"/sports/parlays-multiples.html"
+    let rule=await loadHTML(rulepath_new);
+    let $ = cheerio.load(rule);
+    var tbcontainer = $('<div class="tbContainer"></div>');
+    $(".tblrules").wrap(tbcontainer);
+    await writeHTML($,"./patched/"+countrys[c]+"/sports/parlays-multiples.html");   */
+  }   
     
 
 
@@ -142,7 +191,7 @@ const initServer = async () => {
 
         
     
-    /* for(var i=0;i<$(".menu-item").length;i++){
+   /*  for(var i=0;i<$(".menu-item").length;i++){
         let spid=$('.menu-item')[i].attribs.id;
         let qs="#"+spid;
 
@@ -159,7 +208,7 @@ const initServer = async () => {
         $(qs).text(trsnalgedtext);
         
 
-    } */
+    }  */
     
    
     

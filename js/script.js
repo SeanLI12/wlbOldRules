@@ -51,8 +51,8 @@ window.onclick = function(event) {
 }
 
 function postMessageTo(data) {
-  if (!distEvent) return;
-  distEvent.source.postMessage(data, distEvent.origin);
+  
+  window.parent.postMessage(data);
 }
 
 function postMessageToSetHeight() {
@@ -63,10 +63,10 @@ function postMessageToSetHeight() {
   });
 }
 
-function postMessageToChangeContent() {
+function postMessageToChangeContent(frame) {
   postMessageTo({
     topic: 'changeContent',
-    data: null,
+    data: frame.contentDocument.body.scrollHeight + 68 + 'px',
   });
 }
 
@@ -84,7 +84,7 @@ function updateIFrameHeight(frame) {
 sportsViewer.scrolling = 'no';
 sportsViewer.onload = function (e) {
   updateIFrameHeight(sportsViewer);
-  postMessageToChangeContent();
+  postMessageToChangeContent(sportsViewer);
 
   
   
@@ -101,6 +101,7 @@ sportsViewer.onload = function (e) {
     var linkTable = sportsViewer.contentDocument.getElementById('linktable');
     linkTable.addEventListener('click', function (event) {
       if (event.target.matches('a')) {
+        event.preventDefault();
         var anchorName = event.target.getAttribute('href').substring(1);
         var targetAnchorDom = sportsViewer.contentDocument.querySelector('a[name="' + anchorName + '"]');
         postMessageToSetScrollValue(targetAnchorDom.offsetTop + 8);

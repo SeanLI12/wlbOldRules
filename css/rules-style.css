@@ -23,7 +23,9 @@ body{
   padding: 0;
   overflow: hidden;
 }
-
+.tbContainer{
+  overflow-x: auto;
+}
 .sports-viewer {
   overflow: hidden;
   height: calc(100% - 42px - 32px);
@@ -33,7 +35,9 @@ body{
 .sports-viewer body {
   margin: 0;
 }
-
+.tblrules th{
+  background-color:#333333 !important;
+}
 #pagetop {
   color: #000;
   font-family: Helvetica, Arial, sans-serif;
